@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' />
+<title>Output of DisassemblyDiagnoser for SpanBenchmarks.UnsafeBenchmark: Core(Runtime=Core)</title>
+
+<style type="text/css">
+    pre { margin: 0px; }
+    table { border-collapse:collapse; }
+    td.perMethod { border-top: 1px black solid; }
+    tr.evenMap td { background-color: #F5F5F5; }  
+</style>
+</head>
+<body>
+<table>
+<tbody>
+<tr><th colspan="2" id="140724573760336" style="text-align: left;">00007ffc`fe3aeb50 SpanTest.SpanBenchmarks.UnsafeBenchmark()</th><th></th></tr>
+<tr class="evenMap">
+<td><pre><code>            int* x1 = stackalloc int[16];
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`fe3aeb74 b804000000      mov     eax,4</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`fe3aeb79 6a00            push    0</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`fe3aeb7b 6a00            push    0</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`fe3aeb7d 48ffc8          dec     rax</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`fe3aeb80 75f7            jne     00007ffc`fe3aeb79</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`fe3aeb82 488d0424        lea     rax,[rsp]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`fe3aeb86 48896508        mov     qword ptr [rbp+8],rsp</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>            var sum = 0;
+            ^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`fe3aeb8a 33d2            xor     edx,edx</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>            for (int i = 0; i < 16; i++)
+                 ^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`fe3aeb8c 33c9            xor     ecx,ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>                sum += x1[i];
+                ^^^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`fe3aeb8e 4c63c1          movsxd  r8,ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`fe3aeb91 42031480        add     edx,dword ptr [rax+r8*4]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>            for (int i = 0; i < 16; i++)
+                                    ^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`fe3aeb95 ffc1            inc     ecx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>            for (int i = 0; i < 16; i++)
+                            ^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`fe3aeb97 83f910          cmp     ecx,10h</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`fe3aeb9a 7cf2            jl      00007ffc`fe3aeb8e</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>            return sum;
+            ^^^^^^^^^^^</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`fe3aeb9c 8bc2            mov     eax,edx</pre></code></td>
+<td></td>
+</tr>
+<tr><td colspan="{2}">&nbsp;</td></tr>
+</tbody></table></body></html>

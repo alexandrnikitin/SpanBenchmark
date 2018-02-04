@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' /><head>
+<title>Pretty Output of DisassemblyDiagnoser for SpanBenchmarks.ArrayBenchmark: Core(Runtime=Core)</title>
+
+<style type="text/css">
+    pre { margin: 0px; }
+    table { border-collapse:collapse; }
+    td.perMethod { border-top: 1px black solid; }
+    tr.evenMap td { background-color: #F5F5F5; }  
+</style>
+
+<style type='text/css'>
+    td.label:hover { cursor: pointer; background-color: yellow !important; }
+    td.highlighted { background-color: yellow !important; }
+</style>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<script>$(document).ready(function () {
+    var selectedIndex = 0;
+
+    function highlight() {
+        $('td.reference.highlighted').removeClass('highlighted');
+
+        var selectedLabel = $(this).attr('data-label');
+        if (selectedLabel) {
+            $('td.reference[data-reference=' + selectedLabel + ']').addClass('highlighted');
+        }
+        selectedIndex = 0;
+    }
+
+    function selectNext() {
+        var $highlighted = $('td.reference.highlighted');
+        var selected = $highlighted[selectedIndex++ % $highlighted.length];
+
+        if (selected) {
+            var selectedReference = $(selected).attr('id');
+            if (selectedReference) {
+                window.location.hash = '#' + selectedReference;
+            }
+        }
+    }
+
+    $('td.label').on('click', highlight);
+
+    $(document).on('keydown', function (event) {
+        if (event.keyCode == 114) { // F3
+            event.preventDefault();
+            // Remap F3 to some other key that the browser doesn't care about
+            selectNext();
+        }
+    });
+});</script>
+</head><body><table><tbody>
+<tr><th colspan="2" style="text-align: left;">SpanTest.SpanBenchmarks.ArrayBenchmark()</th><th></th></tr>
+<tr class="">
+<td></td><td ><pre><code>            var x1 = new int[16];
+            ^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffc`fe39eb54 48b9781a615bfd7f0000 mov rcx,offset System_Private_CoreLib+0x9c1a78 (00007ffd`5b611a78)"><pre><code>mov     rcx,offset System_Private_CoreLib+0x9c1a78</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffc`fe39eb5e ba10000000      mov     edx,10h"><pre><code>mov     edx,10h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffc`fe39eb63 e8f819b15f      call    coreclr!coreclr_execute_assembly+0x182b0 (00007ffd`5deb0560)"><pre><code>call    coreclr!coreclr_execute_assembly+0x182b0</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>            var sum = 0;
+            ^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffc`fe39eb68 33d2            xor     edx,edx"><pre><code>xor     edx,edx</pre></code></td>
+</tr><tr class="">
+<td></td><td ><pre><code>            for (int i = 0; i < 16; i++)
+                 ^^^^^^^^^</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffc`fe39eb6a 33c9            xor     ecx,ecx"><pre><code>xor     ecx,ecx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffc`fe39eb6c 83780810        cmp     dword ptr [rax+8],10h"><pre><code>cmp     dword ptr [rax+8],10h</pre></code></td>
+</tr><tr class="">
+<td></td><td id="0" class="reference" data-reference="M00_L01" title="00007ffc`fe39eb70 7c11            jl      00007ffc`fe39eb83"><a href="#M00_L01"><pre><code>jl      M00_L01</pre></code></a></td>
+</tr><tr class="">
+<td></td><td ><pre><code>                sum += x1[i];
+                ^^^^^^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td id="M00_L00" class="label" data-label="M00_L00"><pre><code>M00_L00</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ffc`fe39eb72 4c63c1          movsxd  r8,ecx"><pre><code>movsxd  r8,ecx</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffc`fe39eb75 4203548010      add     edx,dword ptr [rax+r8*4+10h]"><pre><code>add     edx,dword ptr [rax+r8*4+10h]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td ><pre><code>            for (int i = 0; i < 16; i++)
+                                    ^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffc`fe39eb7a ffc1            inc     ecx"><pre><code>inc     ecx</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td ><pre><code>            for (int i = 0; i < 16; i++)
+                            ^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffc`fe39eb7c 83f910          cmp     ecx,10h"><pre><code>cmp     ecx,10h</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td id="1" class="reference" data-reference="M00_L00" title="00007ffc`fe39eb7f 7cf1            jl      00007ffc`fe39eb72"><a href="#M00_L00"><pre><code>jl      M00_L00</pre></code></a></td>
+</tr><tr class="evenMap">
+<td></td><td id="2" class="reference" data-reference="M00_L02" title="00007ffc`fe39eb81 eb0f            jmp     00007ffc`fe39eb92"><a href="#M00_L02"><pre><code>jmp     M00_L02</pre></code></a></td>
+</tr><tr class="">
+<td id="M00_L01" class="label" data-label="M00_L01"><pre><code>M00_L01</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="">
+<td></td><td title="00007ffc`fe39eb83 4c63c1          movsxd  r8,ecx"><pre><code>movsxd  r8,ecx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffc`fe39eb86 4203548010      add     edx,dword ptr [rax+r8*4+10h]"><pre><code>add     edx,dword ptr [rax+r8*4+10h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffc`fe39eb8b ffc1            inc     ecx"><pre><code>inc     ecx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffc`fe39eb8d 83f910          cmp     ecx,10h"><pre><code>cmp     ecx,10h</pre></code></td>
+</tr><tr class="">
+<td></td><td id="3" class="reference" data-reference="M00_L01" title="00007ffc`fe39eb90 7cf1            jl      00007ffc`fe39eb83"><a href="#M00_L01"><pre><code>jl      M00_L01</pre></code></a></td>
+</tr><tr class="">
+<td></td><td ><pre><code>            return sum;
+            ^^^^^^^^^^^</pre></code></td>
+</tr><tr class="evenMap">
+<td id="M00_L02" class="label" data-label="M00_L02"><pre><code>M00_L02</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ffc`fe39eb92 8bc2            mov     eax,edx"><pre><code>mov     eax,edx</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+</tbody></table></body></html>
