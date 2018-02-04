@@ -13,7 +13,7 @@ namespace SpanTest
         {
             var x1 = new int[16];
             var sum = 0;
-            for (int i = 0; i < 16; i++)
+            for (int i = 0; i < x1.Length; i++)
             {
                 sum += x1[i];
             }
@@ -37,7 +37,7 @@ namespace SpanTest
         {
             Span<int> x1 = stackalloc int[16];
             var sum = 0;
-            for (int i = 0; i < 16; i++)
+            for (int i = 0; i < x1.Length; i++)
             {
                 sum += x1[i];
             }
@@ -56,7 +56,7 @@ namespace SpanTest
             }
 
             var sum = 0;
-            for (int i = 0; i < 16; i++)
+            for (int i = 0; i < x1.Length; i++)
             {
                 sum += x1[i];
             }
