@@ -25,156 +25,145 @@
 <tbody>
 <tr>
 <td style="vertical-align:top;"><pre><code>
-00007ffc`fe39eb50 SpanTest.SpanBenchmarks.ArrayBenchmark()
+00007ffc`fe3aeaf0 SpanTest.SpanBenchmarks.ArrayBenchmark()
             var x1 = new int[16];
             ^^^^^^^^^^^^^^^^^^^^^
-00007ffc`fe39eb54 48b9781a615bfd7f0000 mov rcx,offset System_Private_CoreLib+0x9c1a78 (00007ffd`5b611a78)
-00007ffc`fe39eb5e ba10000000      mov     edx,10h
-00007ffc`fe39eb63 e8f819b15f      call    coreclr!coreclr_execute_assembly+0x182b0 (00007ffd`5deb0560)
+00007ffc`fe3aeaf4 48b9781a615bfd7f0000 mov rcx,offset System_Private_CoreLib+0x9c1a78 (00007ffd`5b611a78)
+00007ffc`fe3aeafe ba10000000      mov     edx,10h
+00007ffc`fe3aeb03 e8581ab05f      call    coreclr!coreclr_execute_assembly+0x182b0 (00007ffd`5deb0560)
             var sum = 0;
             ^^^^^^^^^^^^
-00007ffc`fe39eb68 33d2            xor     edx,edx
-            for (int i = 0; i < 16; i++)
+00007ffc`fe3aeb08 33d2            xor     edx,edx
+            for (int i = 0; i < x1.Length; i++)
                  ^^^^^^^^^
-00007ffc`fe39eb6a 33c9            xor     ecx,ecx
-00007ffc`fe39eb6c 83780810        cmp     dword ptr [rax+8],10h
-00007ffc`fe39eb70 7c11            jl      00007ffc`fe39eb83
+00007ffc`fe3aeb0a 33c9            xor     ecx,ecx
                 sum += x1[i];
                 ^^^^^^^^^^^^^
-00007ffc`fe39eb72 4c63c1          movsxd  r8,ecx
-00007ffc`fe39eb75 4203548010      add     edx,dword ptr [rax+r8*4+10h]
-            for (int i = 0; i < 16; i++)
-                                    ^^^
-00007ffc`fe39eb7a ffc1            inc     ecx
-            for (int i = 0; i < 16; i++)
-                            ^^^^^^
-00007ffc`fe39eb7c 83f910          cmp     ecx,10h
-00007ffc`fe39eb7f 7cf1            jl      00007ffc`fe39eb72
-00007ffc`fe39eb81 eb0f            jmp     00007ffc`fe39eb92
-00007ffc`fe39eb83 4c63c1          movsxd  r8,ecx
-00007ffc`fe39eb86 4203548010      add     edx,dword ptr [rax+r8*4+10h]
-00007ffc`fe39eb8b ffc1            inc     ecx
-00007ffc`fe39eb8d 83f910          cmp     ecx,10h
-00007ffc`fe39eb90 7cf1            jl      00007ffc`fe39eb83
+00007ffc`fe3aeb0c 4c63c1          movsxd  r8,ecx
+00007ffc`fe3aeb0f 4203548010      add     edx,dword ptr [rax+r8*4+10h]
+            for (int i = 0; i < x1.Length; i++)
+                                           ^^^
+00007ffc`fe3aeb14 ffc1            inc     ecx
+            for (int i = 0; i < x1.Length; i++)
+                            ^^^^^^^^^^^^^
+00007ffc`fe3aeb16 83f910          cmp     ecx,10h
+00007ffc`fe3aeb19 7cf1            jl      00007ffc`fe3aeb0c
             return sum;
             ^^^^^^^^^^^
-00007ffc`fe39eb92 8bc2            mov     eax,edx
+00007ffc`fe3aeb1b 8bc2            mov     eax,edx
 
 </code></pre></td>
 <td style="vertical-align:top;"><pre><code>
-00007ffc`fe3aeb50 SpanTest.SpanBenchmarks.UnsafeBenchmark()
+00007ffc`fe3aeaf0 SpanTest.SpanBenchmarks.UnsafeBenchmark()
             int* x1 = stackalloc int[16];
             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-00007ffc`fe3aeb74 b804000000      mov     eax,4
-00007ffc`fe3aeb79 6a00            push    0
-00007ffc`fe3aeb7b 6a00            push    0
-00007ffc`fe3aeb7d 48ffc8          dec     rax
-00007ffc`fe3aeb80 75f7            jne     00007ffc`fe3aeb79
-00007ffc`fe3aeb82 488d0424        lea     rax,[rsp]
-00007ffc`fe3aeb86 48896508        mov     qword ptr [rbp+8],rsp
+00007ffc`fe3aeb14 b804000000      mov     eax,4
+00007ffc`fe3aeb19 6a00            push    0
+00007ffc`fe3aeb1b 6a00            push    0
+00007ffc`fe3aeb1d 48ffc8          dec     rax
+00007ffc`fe3aeb20 75f7            jne     00007ffc`fe3aeb19
+00007ffc`fe3aeb22 488d0424        lea     rax,[rsp]
+00007ffc`fe3aeb26 48896508        mov     qword ptr [rbp+8],rsp
             var sum = 0;
             ^^^^^^^^^^^^
-00007ffc`fe3aeb8a 33d2            xor     edx,edx
+00007ffc`fe3aeb2a 33d2            xor     edx,edx
             for (int i = 0; i < 16; i++)
                  ^^^^^^^^^
-00007ffc`fe3aeb8c 33c9            xor     ecx,ecx
+00007ffc`fe3aeb2c 33c9            xor     ecx,ecx
                 sum += x1[i];
                 ^^^^^^^^^^^^^
-00007ffc`fe3aeb8e 4c63c1          movsxd  r8,ecx
-00007ffc`fe3aeb91 42031480        add     edx,dword ptr [rax+r8*4]
+00007ffc`fe3aeb2e 4c63c1          movsxd  r8,ecx
+00007ffc`fe3aeb31 42031480        add     edx,dword ptr [rax+r8*4]
             for (int i = 0; i < 16; i++)
                                     ^^^
-00007ffc`fe3aeb95 ffc1            inc     ecx
+00007ffc`fe3aeb35 ffc1            inc     ecx
             for (int i = 0; i < 16; i++)
                             ^^^^^^
-00007ffc`fe3aeb97 83f910          cmp     ecx,10h
-00007ffc`fe3aeb9a 7cf2            jl      00007ffc`fe3aeb8e
+00007ffc`fe3aeb37 83f910          cmp     ecx,10h
+00007ffc`fe3aeb3a 7cf2            jl      00007ffc`fe3aeb2e
             return sum;
             ^^^^^^^^^^^
-00007ffc`fe3aeb9c 8bc2            mov     eax,edx
+00007ffc`fe3aeb3c 8bc2            mov     eax,edx
 
 </code></pre></td>
 <td style="vertical-align:top;"><pre><code>
-00007ffc`fe3aeb50 SpanTest.SpanBenchmarks.SpanBenchmark()
+00007ffc`fe39eaf0 SpanTest.SpanBenchmarks.SpanBenchmark()
             Span<int> x1 = stackalloc int[16];
             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-00007ffc`fe3aeb84 4883c420        add     rsp,20h
-00007ffc`fe3aeb88 b804000000      mov     eax,4
-00007ffc`fe3aeb8d 6a00            push    0
-00007ffc`fe3aeb8f 6a00            push    0
-00007ffc`fe3aeb91 48ffc8          dec     rax
-00007ffc`fe3aeb94 75f7            jne     00007ffc`fe3aeb8d
-00007ffc`fe3aeb96 4883ec20        sub     rsp,20h
-00007ffc`fe3aeb9a 488d442420      lea     rax,[rsp+20h]
-00007ffc`fe3aeb9f 48896538        mov     qword ptr [rbp+38h],rsp
-00007ffc`fe3aeba3 33d2            xor     edx,edx
-00007ffc`fe3aeba5 48895510        mov     qword ptr [rbp+10h],rdx
-00007ffc`fe3aeba9 48894510        mov     qword ptr [rbp+10h],rax
-00007ffc`fe3aebad 488b4510        mov     rax,qword ptr [rbp+10h]
-00007ffc`fe3aebb1 488d5518        lea     rdx,[rbp+18h]
-00007ffc`fe3aebb5 488902          mov     qword ptr [rdx],rax
-00007ffc`fe3aebb8 c7452010000000  mov     dword ptr [rbp+20h],10h
+00007ffc`fe39eb22 b804000000      mov     eax,4
+00007ffc`fe39eb27 6a00            push    0
+00007ffc`fe39eb29 6a00            push    0
+00007ffc`fe39eb2b 48ffc8          dec     rax
+00007ffc`fe39eb2e 75f7            jne     00007ffc`fe39eb27
+00007ffc`fe39eb30 488d0424        lea     rax,[rsp]
+00007ffc`fe39eb34 48896538        mov     qword ptr [rbp+38h],rsp
+00007ffc`fe39eb38 33d2            xor     edx,edx
+00007ffc`fe39eb3a 48895510        mov     qword ptr [rbp+10h],rdx
+00007ffc`fe39eb3e 48894510        mov     qword ptr [rbp+10h],rax
+00007ffc`fe39eb42 488b4510        mov     rax,qword ptr [rbp+10h]
+00007ffc`fe39eb46 488d5518        lea     rdx,[rbp+18h]
+00007ffc`fe39eb4a 488902          mov     qword ptr [rdx],rax
+00007ffc`fe39eb4d c7452010000000  mov     dword ptr [rbp+20h],10h
             var sum = 0;
             ^^^^^^^^^^^^
-00007ffc`fe3aebbf c4e17a6f4518    vmovdqu xmm0,xmmword ptr [rbp+18h]
-00007ffc`fe3aebc5 c4e17a7f4528    vmovdqu xmmword ptr [rbp+28h],xmm0
-00007ffc`fe3aebcb 33c0            xor     eax,eax
-            for (int i = 0; i < 16; i++)
+00007ffc`fe39eb54 c4e17a6f4518    vmovdqu xmm0,xmmword ptr [rbp+18h]
+00007ffc`fe39eb5a c4e17a7f4528    vmovdqu xmmword ptr [rbp+28h],xmm0
+00007ffc`fe39eb60 33c0            xor     eax,eax
+            for (int i = 0; i < x1.Length; i++)
                  ^^^^^^^^^
-00007ffc`fe3aebcd 33d2            xor     edx,edx
+00007ffc`fe39eb62 33d2            xor     edx,edx
+00007ffc`fe39eb64 8b4d30          mov     ecx,dword ptr [rbp+30h]
+00007ffc`fe39eb67 85c9            test    ecx,ecx
+00007ffc`fe39eb69 7e11            jle     00007ffc`fe39eb7c
                 sum += x1[i];
                 ^^^^^^^^^^^^^
-00007ffc`fe3aebcf 3b5530          cmp     edx,dword ptr [rbp+30h]
-00007ffc`fe3aebd2 7330            jae     00007ffc`fe3aec04
-00007ffc`fe3aebd4 488b4d28        mov     rcx,qword ptr [rbp+28h]
-00007ffc`fe3aebd8 4c63c2          movsxd  r8,edx
-00007ffc`fe3aebdb 42030481        add     eax,dword ptr [rcx+r8*4]
-            for (int i = 0; i < 16; i++)
-                                    ^^^
-00007ffc`fe3aebdf ffc2            inc     edx
-            for (int i = 0; i < 16; i++)
-                            ^^^^^^
-00007ffc`fe3aebe1 83fa10          cmp     edx,10h
-00007ffc`fe3aebe4 7ce9            jl      00007ffc`fe3aebcf
+00007ffc`fe39eb6b 4c8b4528        mov     r8,qword ptr [rbp+28h]
+00007ffc`fe39eb6f 4c63ca          movsxd  r9,edx
+00007ffc`fe39eb72 43030488        add     eax,dword ptr [r8+r9*4]
+            for (int i = 0; i < x1.Length; i++)
+                                           ^^^
+00007ffc`fe39eb76 ffc2            inc     edx
+00007ffc`fe39eb78 3bd1            cmp     edx,ecx
+00007ffc`fe39eb7a 7cef            jl      00007ffc`fe39eb6b
             return sum;
             ^^^^^^^^^^^
-00007ffc`fe3aebe6 48b96464223ccd0c0000 mov rcx,0CCD3C226464h
+00007ffc`fe39eb7c 48b9c368fccd3f200000 mov rcx,203FCDFC68C3h
 
 </code></pre></td>
 <td style="vertical-align:top;"><pre><code>
-00007ffc`fe3aeb50 SpanTest.SpanBenchmarks.SpanUnsafeBenchmark()
+00007ffc`fe3beaf0 SpanTest.SpanBenchmarks.SpanUnsafeBenchmark()
                 int* tmp1 = stackalloc int[16];
                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-00007ffc`fe3aeb7f b804000000      mov     eax,4
-00007ffc`fe3aeb84 6a00            push    0
-00007ffc`fe3aeb86 6a00            push    0
-00007ffc`fe3aeb88 48ffc8          dec     rax
-00007ffc`fe3aeb8b 75f7            jne     00007ffc`fe3aeb84
-00007ffc`fe3aeb8d 488d0424        lea     rax,[rsp]
-00007ffc`fe3aeb91 48896528        mov     qword ptr [rbp+28h],rsp
+00007ffc`fe3beb1f b804000000      mov     eax,4
+00007ffc`fe3beb24 6a00            push    0
+00007ffc`fe3beb26 6a00            push    0
+00007ffc`fe3beb28 48ffc8          dec     rax
+00007ffc`fe3beb2b 75f7            jne     00007ffc`fe3beb24
+00007ffc`fe3beb2d 488d0424        lea     rax,[rsp]
+00007ffc`fe3beb31 48896528        mov     qword ptr [rbp+28h],rsp
                 x1 = new Span<int>(tmp1, 16);
                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-00007ffc`fe3aeb95 33d2            xor     edx,edx
-00007ffc`fe3aeb97 48895510        mov     qword ptr [rbp+10h],rdx
-00007ffc`fe3aeb9b 48894510        mov     qword ptr [rbp+10h],rax
-00007ffc`fe3aeb9f 488b4510        mov     rax,qword ptr [rbp+10h]
-            for (int i = 0; i < 16; i++)
+00007ffc`fe3beb35 33d2            xor     edx,edx
+00007ffc`fe3beb37 48895510        mov     qword ptr [rbp+10h],rdx
+00007ffc`fe3beb3b 48894510        mov     qword ptr [rbp+10h],rax
+00007ffc`fe3beb3f 488b4510        mov     rax,qword ptr [rbp+10h]
+00007ffc`fe3beb43 48894518        mov     qword ptr [rbp+18h],rax
+00007ffc`fe3beb47 c7452010000000  mov     dword ptr [rbp+20h],10h
+            for (int i = 0; i < x1.Length; i++)
                  ^^^^^^^^^
-00007ffc`fe3aeba3 33c9            xor     ecx,ecx
+00007ffc`fe3beb4e 33c9            xor     ecx,ecx
                 sum += x1[i];
                 ^^^^^^^^^^^^^
-00007ffc`fe3aeba5 4c63c1          movsxd  r8,ecx
-00007ffc`fe3aeba8 42031480        add     edx,dword ptr [rax+r8*4]
-            for (int i = 0; i < 16; i++)
-                                    ^^^
-00007ffc`fe3aebac ffc1            inc     ecx
-            for (int i = 0; i < 16; i++)
-                            ^^^^^^
-00007ffc`fe3aebae 83f910          cmp     ecx,10h
-00007ffc`fe3aebb1 7cf2            jl      00007ffc`fe3aeba5
+00007ffc`fe3beb50 4c63c1          movsxd  r8,ecx
+00007ffc`fe3beb53 42031480        add     edx,dword ptr [rax+r8*4]
+            for (int i = 0; i < x1.Length; i++)
+                                           ^^^
+00007ffc`fe3beb57 ffc1            inc     ecx
+00007ffc`fe3beb59 3b4d20          cmp     ecx,dword ptr [rbp+20h]
+00007ffc`fe3beb5c 7cf2            jl      00007ffc`fe3beb50
             return sum;
             ^^^^^^^^^^^
-00007ffc`fe3aebb3 8bc2            mov     eax,edx
+00007ffc`fe3beb5e 8bc2            mov     eax,edx
 
 </code></pre></td>
 </tr>

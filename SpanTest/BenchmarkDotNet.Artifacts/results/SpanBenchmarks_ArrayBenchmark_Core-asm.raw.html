@@ -11,22 +11,22 @@
 <body>
 <table>
 <tbody>
-<tr><th colspan="2" id="140724573694800" style="text-align: left;">00007ffc`fe39eb50 SpanTest.SpanBenchmarks.ArrayBenchmark()</th><th></th></tr>
+<tr><th colspan="2" id="140724573760240" style="text-align: left;">00007ffc`fe3aeaf0 SpanTest.SpanBenchmarks.ArrayBenchmark()</th><th></th></tr>
 <tr class="evenMap">
 <td><pre><code>            var x1 = new int[16];
             ^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
 <td></td>
 </tr>
 <tr class="evenMap">
-<td><pre><code>00007ffc`fe39eb54 48b9781a615bfd7f0000 mov rcx,offset System_Private_CoreLib+0x9c1a78 (00007ffd`5b611a78)</pre></code></td>
+<td><pre><code>00007ffc`fe3aeaf4 48b9781a615bfd7f0000 mov rcx,offset System_Private_CoreLib+0x9c1a78 (00007ffd`5b611a78)</pre></code></td>
 <td></td>
 </tr>
 <tr class="evenMap">
-<td><pre><code>00007ffc`fe39eb5e ba10000000      mov     edx,10h</pre></code></td>
+<td><pre><code>00007ffc`fe3aeafe ba10000000      mov     edx,10h</pre></code></td>
 <td></td>
 </tr>
 <tr class="evenMap">
-<td><pre><code>00007ffc`fe39eb63 e8f819b15f      call    coreclr!coreclr_execute_assembly+0x182b0 (00007ffd`5deb0560)</pre></code></td>
+<td><pre><code>00007ffc`fe3aeb03 e8581ab05f      call    coreclr!coreclr_execute_assembly+0x182b0 (00007ffd`5deb0560)</pre></code></td>
 <td>not managed method</td>
 </tr>
 <tr class="">
@@ -35,24 +35,16 @@
 <td></td>
 </tr>
 <tr class="">
-<td><pre><code>00007ffc`fe39eb68 33d2            xor     edx,edx</pre></code></td>
+<td><pre><code>00007ffc`fe3aeb08 33d2            xor     edx,edx</pre></code></td>
 <td></td>
 </tr>
 <tr class="evenMap">
-<td><pre><code>            for (int i = 0; i < 16; i++)
+<td><pre><code>            for (int i = 0; i < x1.Length; i++)
                  ^^^^^^^^^</pre></code></td>
 <td></td>
 </tr>
 <tr class="evenMap">
-<td><pre><code>00007ffc`fe39eb6a 33c9            xor     ecx,ecx</pre></code></td>
-<td></td>
-</tr>
-<tr class="evenMap">
-<td><pre><code>00007ffc`fe39eb6c 83780810        cmp     dword ptr [rax+8],10h</pre></code></td>
-<td></td>
-</tr>
-<tr class="evenMap">
-<td><pre><code>00007ffc`fe39eb70 7c11            jl      00007ffc`fe39eb83</pre></code></td>
+<td><pre><code>00007ffc`fe3aeb0a 33c9            xor     ecx,ecx</pre></code></td>
 <td></td>
 </tr>
 <tr class="">
@@ -61,66 +53,42 @@
 <td></td>
 </tr>
 <tr class="">
-<td><pre><code>00007ffc`fe39eb72 4c63c1          movsxd  r8,ecx</pre></code></td>
+<td><pre><code>00007ffc`fe3aeb0c 4c63c1          movsxd  r8,ecx</pre></code></td>
 <td></td>
 </tr>
 <tr class="">
-<td><pre><code>00007ffc`fe39eb75 4203548010      add     edx,dword ptr [rax+r8*4+10h]</pre></code></td>
+<td><pre><code>00007ffc`fe3aeb0f 4203548010      add     edx,dword ptr [rax+r8*4+10h]</pre></code></td>
 <td></td>
 </tr>
 <tr class="evenMap">
-<td><pre><code>            for (int i = 0; i < 16; i++)
-                                    ^^^</pre></code></td>
+<td><pre><code>            for (int i = 0; i < x1.Length; i++)
+                                           ^^^</pre></code></td>
 <td></td>
 </tr>
 <tr class="evenMap">
-<td><pre><code>00007ffc`fe39eb7a ffc1            inc     ecx</pre></code></td>
+<td><pre><code>00007ffc`fe3aeb14 ffc1            inc     ecx</pre></code></td>
 <td></td>
 </tr>
 <tr class="">
-<td><pre><code>            for (int i = 0; i < 16; i++)
-                            ^^^^^^</pre></code></td>
+<td><pre><code>            for (int i = 0; i < x1.Length; i++)
+                            ^^^^^^^^^^^^^</pre></code></td>
 <td></td>
 </tr>
 <tr class="">
-<td><pre><code>00007ffc`fe39eb7c 83f910          cmp     ecx,10h</pre></code></td>
+<td><pre><code>00007ffc`fe3aeb16 83f910          cmp     ecx,10h</pre></code></td>
 <td></td>
 </tr>
 <tr class="">
-<td><pre><code>00007ffc`fe39eb7f 7cf1            jl      00007ffc`fe39eb72</pre></code></td>
+<td><pre><code>00007ffc`fe3aeb19 7cf1            jl      00007ffc`fe3aeb0c</pre></code></td>
 <td></td>
 </tr>
 <tr class="evenMap">
-<td><pre><code>00007ffc`fe39eb81 eb0f            jmp     00007ffc`fe39eb92</pre></code></td>
-<td></td>
-</tr>
-<tr class="evenMap">
-<td><pre><code>00007ffc`fe39eb83 4c63c1          movsxd  r8,ecx</pre></code></td>
-<td></td>
-</tr>
-<tr class="evenMap">
-<td><pre><code>00007ffc`fe39eb86 4203548010      add     edx,dword ptr [rax+r8*4+10h]</pre></code></td>
-<td></td>
-</tr>
-<tr class="evenMap">
-<td><pre><code>00007ffc`fe39eb8b ffc1            inc     ecx</pre></code></td>
-<td></td>
-</tr>
-<tr class="evenMap">
-<td><pre><code>00007ffc`fe39eb8d 83f910          cmp     ecx,10h</pre></code></td>
-<td></td>
-</tr>
-<tr class="evenMap">
-<td><pre><code>00007ffc`fe39eb90 7cf1            jl      00007ffc`fe39eb83</pre></code></td>
-<td></td>
-</tr>
-<tr class="">
 <td><pre><code>            return sum;
             ^^^^^^^^^^^</pre></code></td>
 <td></td>
 </tr>
-<tr class="">
-<td><pre><code>00007ffc`fe39eb92 8bc2            mov     eax,edx</pre></code></td>
+<tr class="evenMap">
+<td><pre><code>00007ffc`fe3aeb1b 8bc2            mov     eax,edx</pre></code></td>
 <td></td>
 </tr>
 <tr><td colspan="{2}">&nbsp;</td></tr>

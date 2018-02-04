@@ -12,7 +12,7 @@ Job=Core  Runtime=Core
 ```
 |              Method |     Mean |     Error |    StdDev | Scaled | ScaledSD |
 |-------------------- |---------:|----------:|----------:|-------:|---------:|
-|      ArrayBenchmark | 17.83 ns | 0.2000 ns | 0.1871 ns |   1.00 |     0.00 |
-|     UnsafeBenchmark | 10.49 ns | 0.2387 ns | 0.2344 ns |   0.59 |     0.01 |
-|       SpanBenchmark | 29.63 ns | 0.3433 ns | 0.3212 ns |   1.66 |     0.02 |
-| SpanUnsafeBenchmark | 18.60 ns | 0.2839 ns | 0.2655 ns |   1.04 |     0.02 |
+|      ArrayBenchmark | 15.46 ns | 0.0847 ns | 0.0792 ns |   1.00 |     0.00 |
+|     UnsafeBenchmark | 10.71 ns | 0.1411 ns | 0.1250 ns |   0.69 |     0.01 |
+|       SpanBenchmark | 27.84 ns | 0.2352 ns | 0.2200 ns |   1.80 |     0.02 |
+| SpanUnsafeBenchmark | 19.39 ns | 0.1233 ns | 0.1153 ns |   1.25 |     0.01 |

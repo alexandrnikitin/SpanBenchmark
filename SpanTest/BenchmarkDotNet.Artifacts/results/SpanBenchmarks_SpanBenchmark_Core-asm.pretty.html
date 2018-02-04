@@ -54,54 +54,56 @@
 <td></td><td ><pre><code>            Span<int> x1 = stackalloc int[16];
             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
 </tr><tr class="">
-<td></td><td title="00007ffc`fe3aeb84 4883c420        add     rsp,20h"><pre><code>add     rsp,20h</pre></code></td>
-</tr><tr class="">
-<td></td><td title="00007ffc`fe3aeb88 b804000000      mov     eax,4"><pre><code>mov     eax,4</pre></code></td>
+<td></td><td title="00007ffc`fe39eb22 b804000000      mov     eax,4"><pre><code>mov     eax,4</pre></code></td>
 </tr><tr class="evenMap">
 <td id="M00_L00" class="label" data-label="M00_L00"><pre><code>M00_L00</pre></code></td>
 <td>&nbsp;</td></tr>
 <tr class="evenMap">
-<td></td><td title="00007ffc`fe3aeb8d 6a00            push    0"><pre><code>push    0</pre></code></td>
+<td></td><td title="00007ffc`fe39eb27 6a00            push    0"><pre><code>push    0</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aeb8f 6a00            push    0"><pre><code>push    0</pre></code></td>
+<td></td><td title="00007ffc`fe39eb29 6a00            push    0"><pre><code>push    0</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aeb91 48ffc8          dec     rax"><pre><code>dec     rax</pre></code></td>
+<td></td><td title="00007ffc`fe39eb2b 48ffc8          dec     rax"><pre><code>dec     rax</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td id="0" class="reference" data-reference="M00_L00" title="00007ffc`fe3aeb94 75f7            jne     00007ffc`fe3aeb8d"><a href="#M00_L00"><pre><code>jne     M00_L00</pre></code></a></td>
+<td></td><td id="0" class="reference" data-reference="M00_L00" title="00007ffc`fe39eb2e 75f7            jne     00007ffc`fe39eb27"><a href="#M00_L00"><pre><code>jne     M00_L00</pre></code></a></td>
 </tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aeb96 4883ec20        sub     rsp,20h"><pre><code>sub     rsp,20h</pre></code></td>
+<td></td><td title="00007ffc`fe39eb30 488d0424        lea     rax,[rsp]"><pre><code>lea     rax,[rsp]</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aeb9a 488d442420      lea     rax,[rsp+20h]"><pre><code>lea     rax,[rsp+20h]</pre></code></td>
+<td></td><td title="00007ffc`fe39eb34 48896538        mov     qword ptr [rbp+38h],rsp"><pre><code>mov     qword ptr [rbp+38h],rsp</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aeb9f 48896538        mov     qword ptr [rbp+38h],rsp"><pre><code>mov     qword ptr [rbp+38h],rsp</pre></code></td>
+<td></td><td title="00007ffc`fe39eb38 33d2            xor     edx,edx"><pre><code>xor     edx,edx</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aeba3 33d2            xor     edx,edx"><pre><code>xor     edx,edx</pre></code></td>
+<td></td><td title="00007ffc`fe39eb3a 48895510        mov     qword ptr [rbp+10h],rdx"><pre><code>mov     qword ptr [rbp+10h],rdx</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aeba5 48895510        mov     qword ptr [rbp+10h],rdx"><pre><code>mov     qword ptr [rbp+10h],rdx</pre></code></td>
+<td></td><td title="00007ffc`fe39eb3e 48894510        mov     qword ptr [rbp+10h],rax"><pre><code>mov     qword ptr [rbp+10h],rax</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aeba9 48894510        mov     qword ptr [rbp+10h],rax"><pre><code>mov     qword ptr [rbp+10h],rax</pre></code></td>
+<td></td><td title="00007ffc`fe39eb42 488b4510        mov     rax,qword ptr [rbp+10h]"><pre><code>mov     rax,qword ptr [rbp+10h]</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aebad 488b4510        mov     rax,qword ptr [rbp+10h]"><pre><code>mov     rax,qword ptr [rbp+10h]</pre></code></td>
+<td></td><td title="00007ffc`fe39eb46 488d5518        lea     rdx,[rbp+18h]"><pre><code>lea     rdx,[rbp+18h]</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aebb1 488d5518        lea     rdx,[rbp+18h]"><pre><code>lea     rdx,[rbp+18h]</pre></code></td>
+<td></td><td title="00007ffc`fe39eb4a 488902          mov     qword ptr [rdx],rax"><pre><code>mov     qword ptr [rdx],rax</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aebb5 488902          mov     qword ptr [rdx],rax"><pre><code>mov     qword ptr [rdx],rax</pre></code></td>
-</tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aebb8 c7452010000000  mov     dword ptr [rbp+20h],10h"><pre><code>mov     dword ptr [rbp+20h],10h</pre></code></td>
+<td></td><td title="00007ffc`fe39eb4d c7452010000000  mov     dword ptr [rbp+20h],10h"><pre><code>mov     dword ptr [rbp+20h],10h</pre></code></td>
 </tr><tr class="evenMap">
 <td></td><td ><pre><code>            var sum = 0;
             ^^^^^^^^^^^^</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aebbf c4e17a6f4518    vmovdqu xmm0,xmmword ptr [rbp+18h]"><pre><code>vmovdqu xmm0,xmmword ptr [rbp+18h]</pre></code></td>
+<td></td><td title="00007ffc`fe39eb54 c4e17a6f4518    vmovdqu xmm0,xmmword ptr [rbp+18h]"><pre><code>vmovdqu xmm0,xmmword ptr [rbp+18h]</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aebc5 c4e17a7f4528    vmovdqu xmmword ptr [rbp+28h],xmm0"><pre><code>vmovdqu xmmword ptr [rbp+28h],xmm0</pre></code></td>
+<td></td><td title="00007ffc`fe39eb5a c4e17a7f4528    vmovdqu xmmword ptr [rbp+28h],xmm0"><pre><code>vmovdqu xmmword ptr [rbp+28h],xmm0</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aebcb 33c0            xor     eax,eax"><pre><code>xor     eax,eax</pre></code></td>
+<td></td><td title="00007ffc`fe39eb60 33c0            xor     eax,eax"><pre><code>xor     eax,eax</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td ><pre><code>            for (int i = 0; i < 16; i++)
+<td></td><td ><pre><code>            for (int i = 0; i < x1.Length; i++)
                  ^^^^^^^^^</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aebcd 33d2            xor     edx,edx"><pre><code>xor     edx,edx</pre></code></td>
+<td></td><td title="00007ffc`fe39eb62 33d2            xor     edx,edx"><pre><code>xor     edx,edx</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffc`fe39eb64 8b4d30          mov     ecx,dword ptr [rbp+30h]"><pre><code>mov     ecx,dword ptr [rbp+30h]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffc`fe39eb67 85c9            test    ecx,ecx"><pre><code>test    ecx,ecx</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td id="1" class="reference" data-reference="M00_L02" title="00007ffc`fe39eb69 7e11            jle     00007ffc`fe39eb7c"><a href="#M00_L02"><pre><code>jle     M00_L02</pre></code></a></td>
 </tr><tr class="evenMap">
 <td></td><td ><pre><code>                sum += x1[i];
                 ^^^^^^^^^^^^^</pre></code></td>
@@ -109,31 +111,27 @@
 <td id="M00_L01" class="label" data-label="M00_L01"><pre><code>M00_L01</pre></code></td>
 <td>&nbsp;</td></tr>
 <tr class="">
-<td></td><td title="00007ffc`fe3aebcf 3b5530          cmp     edx,dword ptr [rbp+30h]"><pre><code>cmp     edx,dword ptr [rbp+30h]</pre></code></td>
+<td></td><td title="00007ffc`fe39eb6b 4c8b4528        mov     r8,qword ptr [rbp+28h]"><pre><code>mov     r8,qword ptr [rbp+28h]</pre></code></td>
 </tr><tr class="">
-<td></td><td title="00007ffc`fe3aebd2 7330            jae     00007ffc`fe3aec04"><pre><code>jae     00007ffc`fe3aec04</pre></code></td>
+<td></td><td title="00007ffc`fe39eb6f 4c63ca          movsxd  r9,edx"><pre><code>movsxd  r9,edx</pre></code></td>
 </tr><tr class="">
-<td></td><td title="00007ffc`fe3aebd4 488b4d28        mov     rcx,qword ptr [rbp+28h]"><pre><code>mov     rcx,qword ptr [rbp+28h]</pre></code></td>
+<td></td><td title="00007ffc`fe39eb72 43030488        add     eax,dword ptr [r8+r9*4]"><pre><code>add     eax,dword ptr [r8+r9*4]</pre></code></td>
 </tr><tr class="">
-<td></td><td title="00007ffc`fe3aebd8 4c63c2          movsxd  r8,edx"><pre><code>movsxd  r8,edx</pre></code></td>
+<td></td><td ><pre><code>            for (int i = 0; i < x1.Length; i++)
+                                           ^^^</pre></code></td>
 </tr><tr class="">
-<td></td><td title="00007ffc`fe3aebdb 42030481        add     eax,dword ptr [rcx+r8*4]"><pre><code>add     eax,dword ptr [rcx+r8*4]</pre></code></td>
+<td></td><td title="00007ffc`fe39eb76 ffc2            inc     edx"><pre><code>inc     edx</pre></code></td>
 </tr><tr class="">
-<td></td><td ><pre><code>            for (int i = 0; i < 16; i++)
-                                    ^^^</pre></code></td>
+<td></td><td title="00007ffc`fe39eb78 3bd1            cmp     edx,ecx"><pre><code>cmp     edx,ecx</pre></code></td>
 </tr><tr class="">
-<td></td><td title="00007ffc`fe3aebdf ffc2            inc     edx"><pre><code>inc     edx</pre></code></td>
-</tr><tr class="">
-<td></td><td ><pre><code>            for (int i = 0; i < 16; i++)
-                            ^^^^^^</pre></code></td>
-</tr><tr class="">
-<td></td><td title="00007ffc`fe3aebe1 83fa10          cmp     edx,10h"><pre><code>cmp     edx,10h</pre></code></td>
-</tr><tr class="">
-<td></td><td id="1" class="reference" data-reference="M00_L01" title="00007ffc`fe3aebe4 7ce9            jl      00007ffc`fe3aebcf"><a href="#M00_L01"><pre><code>jl      M00_L01</pre></code></a></td>
+<td></td><td id="2" class="reference" data-reference="M00_L01" title="00007ffc`fe39eb7a 7cef            jl      00007ffc`fe39eb6b"><a href="#M00_L01"><pre><code>jl      M00_L01</pre></code></a></td>
 </tr><tr class="">
 <td></td><td ><pre><code>            return sum;
             ^^^^^^^^^^^</pre></code></td>
-</tr><tr class="">
-<td></td><td title="00007ffc`fe3aebe6 48b96464223ccd0c0000 mov rcx,0CCD3C226464h"><pre><code>mov     rcx,0CCD3C226464h</pre></code></td>
+</tr><tr class="evenMap">
+<td id="M00_L02" class="label" data-label="M00_L02"><pre><code>M00_L02</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ffc`fe39eb7c 48b9c368fccd3f200000 mov rcx,203FCDFC68C3h"><pre><code>mov     rcx,203FCDFC68C3h</pre></code></td>
 </tr><tr><td colspan="{2}">&nbsp;</td></tr>
 </tbody></table></body></html>

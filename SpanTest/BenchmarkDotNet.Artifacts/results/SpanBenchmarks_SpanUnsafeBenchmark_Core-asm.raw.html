@@ -11,38 +11,38 @@
 <body>
 <table>
 <tbody>
-<tr><th colspan="2" id="140724573760336" style="text-align: left;">00007ffc`fe3aeb50 SpanTest.SpanBenchmarks.SpanUnsafeBenchmark()</th><th></th></tr>
+<tr><th colspan="2" id="140724573825776" style="text-align: left;">00007ffc`fe3beaf0 SpanTest.SpanBenchmarks.SpanUnsafeBenchmark()</th><th></th></tr>
 <tr class="evenMap">
 <td><pre><code>                int* tmp1 = stackalloc int[16];
                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
 <td></td>
 </tr>
 <tr class="evenMap">
-<td><pre><code>00007ffc`fe3aeb7f b804000000      mov     eax,4</pre></code></td>
+<td><pre><code>00007ffc`fe3beb1f b804000000      mov     eax,4</pre></code></td>
 <td></td>
 </tr>
 <tr class="evenMap">
-<td><pre><code>00007ffc`fe3aeb84 6a00            push    0</pre></code></td>
+<td><pre><code>00007ffc`fe3beb24 6a00            push    0</pre></code></td>
 <td></td>
 </tr>
 <tr class="evenMap">
-<td><pre><code>00007ffc`fe3aeb86 6a00            push    0</pre></code></td>
+<td><pre><code>00007ffc`fe3beb26 6a00            push    0</pre></code></td>
 <td></td>
 </tr>
 <tr class="evenMap">
-<td><pre><code>00007ffc`fe3aeb88 48ffc8          dec     rax</pre></code></td>
+<td><pre><code>00007ffc`fe3beb28 48ffc8          dec     rax</pre></code></td>
 <td></td>
 </tr>
 <tr class="evenMap">
-<td><pre><code>00007ffc`fe3aeb8b 75f7            jne     00007ffc`fe3aeb84</pre></code></td>
+<td><pre><code>00007ffc`fe3beb2b 75f7            jne     00007ffc`fe3beb24</pre></code></td>
 <td></td>
 </tr>
 <tr class="evenMap">
-<td><pre><code>00007ffc`fe3aeb8d 488d0424        lea     rax,[rsp]</pre></code></td>
+<td><pre><code>00007ffc`fe3beb2d 488d0424        lea     rax,[rsp]</pre></code></td>
 <td></td>
 </tr>
 <tr class="evenMap">
-<td><pre><code>00007ffc`fe3aeb91 48896528        mov     qword ptr [rbp+28h],rsp</pre></code></td>
+<td><pre><code>00007ffc`fe3beb31 48896528        mov     qword ptr [rbp+28h],rsp</pre></code></td>
 <td></td>
 </tr>
 <tr class="">
@@ -51,28 +51,36 @@
 <td></td>
 </tr>
 <tr class="">
-<td><pre><code>00007ffc`fe3aeb95 33d2            xor     edx,edx</pre></code></td>
+<td><pre><code>00007ffc`fe3beb35 33d2            xor     edx,edx</pre></code></td>
 <td></td>
 </tr>
 <tr class="">
-<td><pre><code>00007ffc`fe3aeb97 48895510        mov     qword ptr [rbp+10h],rdx</pre></code></td>
+<td><pre><code>00007ffc`fe3beb37 48895510        mov     qword ptr [rbp+10h],rdx</pre></code></td>
 <td></td>
 </tr>
 <tr class="">
-<td><pre><code>00007ffc`fe3aeb9b 48894510        mov     qword ptr [rbp+10h],rax</pre></code></td>
+<td><pre><code>00007ffc`fe3beb3b 48894510        mov     qword ptr [rbp+10h],rax</pre></code></td>
 <td></td>
 </tr>
 <tr class="">
-<td><pre><code>00007ffc`fe3aeb9f 488b4510        mov     rax,qword ptr [rbp+10h]</pre></code></td>
+<td><pre><code>00007ffc`fe3beb3f 488b4510        mov     rax,qword ptr [rbp+10h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`fe3beb43 48894518        mov     qword ptr [rbp+18h],rax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffc`fe3beb47 c7452010000000  mov     dword ptr [rbp+20h],10h</pre></code></td>
 <td></td>
 </tr>
 <tr class="evenMap">
-<td><pre><code>            for (int i = 0; i < 16; i++)
+<td><pre><code>            for (int i = 0; i < x1.Length; i++)
                  ^^^^^^^^^</pre></code></td>
 <td></td>
 </tr>
 <tr class="evenMap">
-<td><pre><code>00007ffc`fe3aeba3 33c9            xor     ecx,ecx</pre></code></td>
+<td><pre><code>00007ffc`fe3beb4e 33c9            xor     ecx,ecx</pre></code></td>
 <td></td>
 </tr>
 <tr class="">
@@ -81,42 +89,37 @@
 <td></td>
 </tr>
 <tr class="">
-<td><pre><code>00007ffc`fe3aeba5 4c63c1          movsxd  r8,ecx</pre></code></td>
+<td><pre><code>00007ffc`fe3beb50 4c63c1          movsxd  r8,ecx</pre></code></td>
 <td></td>
 </tr>
 <tr class="">
-<td><pre><code>00007ffc`fe3aeba8 42031480        add     edx,dword ptr [rax+r8*4]</pre></code></td>
+<td><pre><code>00007ffc`fe3beb53 42031480        add     edx,dword ptr [rax+r8*4]</pre></code></td>
 <td></td>
 </tr>
 <tr class="evenMap">
-<td><pre><code>            for (int i = 0; i < 16; i++)
-                                    ^^^</pre></code></td>
+<td><pre><code>            for (int i = 0; i < x1.Length; i++)
+                                           ^^^</pre></code></td>
 <td></td>
 </tr>
 <tr class="evenMap">
-<td><pre><code>00007ffc`fe3aebac ffc1            inc     ecx</pre></code></td>
-<td></td>
-</tr>
-<tr class="">
-<td><pre><code>            for (int i = 0; i < 16; i++)
-                            ^^^^^^</pre></code></td>
-<td></td>
-</tr>
-<tr class="">
-<td><pre><code>00007ffc`fe3aebae 83f910          cmp     ecx,10h</pre></code></td>
-<td></td>
-</tr>
-<tr class="">
-<td><pre><code>00007ffc`fe3aebb1 7cf2            jl      00007ffc`fe3aeba5</pre></code></td>
+<td><pre><code>00007ffc`fe3beb57 ffc1            inc     ecx</pre></code></td>
 <td></td>
 </tr>
 <tr class="evenMap">
+<td><pre><code>00007ffc`fe3beb59 3b4d20          cmp     ecx,dword ptr [rbp+20h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="evenMap">
+<td><pre><code>00007ffc`fe3beb5c 7cf2            jl      00007ffc`fe3beb50</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
 <td><pre><code>            return sum;
             ^^^^^^^^^^^</pre></code></td>
 <td></td>
 </tr>
-<tr class="evenMap">
-<td><pre><code>00007ffc`fe3aebb3 8bc2            mov     eax,edx</pre></code></td>
+<tr class="">
+<td><pre><code>00007ffc`fe3beb5e 8bc2            mov     eax,edx</pre></code></td>
 <td></td>
 </tr>
 <tr><td colspan="{2}">&nbsp;</td></tr>

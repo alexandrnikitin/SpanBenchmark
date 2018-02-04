@@ -54,38 +54,42 @@
 <td></td><td ><pre><code>                int* tmp1 = stackalloc int[16];
                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
 </tr><tr class="">
-<td></td><td title="00007ffc`fe3aeb7f b804000000      mov     eax,4"><pre><code>mov     eax,4</pre></code></td>
+<td></td><td title="00007ffc`fe3beb1f b804000000      mov     eax,4"><pre><code>mov     eax,4</pre></code></td>
 </tr><tr class="evenMap">
 <td id="M00_L00" class="label" data-label="M00_L00"><pre><code>M00_L00</pre></code></td>
 <td>&nbsp;</td></tr>
 <tr class="evenMap">
-<td></td><td title="00007ffc`fe3aeb84 6a00            push    0"><pre><code>push    0</pre></code></td>
+<td></td><td title="00007ffc`fe3beb24 6a00            push    0"><pre><code>push    0</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aeb86 6a00            push    0"><pre><code>push    0</pre></code></td>
+<td></td><td title="00007ffc`fe3beb26 6a00            push    0"><pre><code>push    0</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aeb88 48ffc8          dec     rax"><pre><code>dec     rax</pre></code></td>
+<td></td><td title="00007ffc`fe3beb28 48ffc8          dec     rax"><pre><code>dec     rax</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td id="0" class="reference" data-reference="M00_L00" title="00007ffc`fe3aeb8b 75f7            jne     00007ffc`fe3aeb84"><a href="#M00_L00"><pre><code>jne     M00_L00</pre></code></a></td>
+<td></td><td id="0" class="reference" data-reference="M00_L00" title="00007ffc`fe3beb2b 75f7            jne     00007ffc`fe3beb24"><a href="#M00_L00"><pre><code>jne     M00_L00</pre></code></a></td>
 </tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aeb8d 488d0424        lea     rax,[rsp]"><pre><code>lea     rax,[rsp]</pre></code></td>
+<td></td><td title="00007ffc`fe3beb2d 488d0424        lea     rax,[rsp]"><pre><code>lea     rax,[rsp]</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aeb91 48896528        mov     qword ptr [rbp+28h],rsp"><pre><code>mov     qword ptr [rbp+28h],rsp</pre></code></td>
+<td></td><td title="00007ffc`fe3beb31 48896528        mov     qword ptr [rbp+28h],rsp"><pre><code>mov     qword ptr [rbp+28h],rsp</pre></code></td>
 </tr><tr class="evenMap">
 <td></td><td ><pre><code>                x1 = new Span<int>(tmp1, 16);
                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aeb95 33d2            xor     edx,edx"><pre><code>xor     edx,edx</pre></code></td>
+<td></td><td title="00007ffc`fe3beb35 33d2            xor     edx,edx"><pre><code>xor     edx,edx</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aeb97 48895510        mov     qword ptr [rbp+10h],rdx"><pre><code>mov     qword ptr [rbp+10h],rdx</pre></code></td>
+<td></td><td title="00007ffc`fe3beb37 48895510        mov     qword ptr [rbp+10h],rdx"><pre><code>mov     qword ptr [rbp+10h],rdx</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aeb9b 48894510        mov     qword ptr [rbp+10h],rax"><pre><code>mov     qword ptr [rbp+10h],rax</pre></code></td>
+<td></td><td title="00007ffc`fe3beb3b 48894510        mov     qword ptr [rbp+10h],rax"><pre><code>mov     qword ptr [rbp+10h],rax</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aeb9f 488b4510        mov     rax,qword ptr [rbp+10h]"><pre><code>mov     rax,qword ptr [rbp+10h]</pre></code></td>
+<td></td><td title="00007ffc`fe3beb3f 488b4510        mov     rax,qword ptr [rbp+10h]"><pre><code>mov     rax,qword ptr [rbp+10h]</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td ><pre><code>            for (int i = 0; i < 16; i++)
+<td></td><td title="00007ffc`fe3beb43 48894518        mov     qword ptr [rbp+18h],rax"><pre><code>mov     qword ptr [rbp+18h],rax</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffc`fe3beb47 c7452010000000  mov     dword ptr [rbp+20h],10h"><pre><code>mov     dword ptr [rbp+20h],10h</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td ><pre><code>            for (int i = 0; i < x1.Length; i++)
                  ^^^^^^^^^</pre></code></td>
 </tr><tr class="evenMap">
-<td></td><td title="00007ffc`fe3aeba3 33c9            xor     ecx,ecx"><pre><code>xor     ecx,ecx</pre></code></td>
+<td></td><td title="00007ffc`fe3beb4e 33c9            xor     ecx,ecx"><pre><code>xor     ecx,ecx</pre></code></td>
 </tr><tr class="evenMap">
 <td></td><td ><pre><code>                sum += x1[i];
                 ^^^^^^^^^^^^^</pre></code></td>
@@ -93,25 +97,22 @@
 <td id="M00_L01" class="label" data-label="M00_L01"><pre><code>M00_L01</pre></code></td>
 <td>&nbsp;</td></tr>
 <tr class="">
-<td></td><td title="00007ffc`fe3aeba5 4c63c1          movsxd  r8,ecx"><pre><code>movsxd  r8,ecx</pre></code></td>
+<td></td><td title="00007ffc`fe3beb50 4c63c1          movsxd  r8,ecx"><pre><code>movsxd  r8,ecx</pre></code></td>
 </tr><tr class="">
-<td></td><td title="00007ffc`fe3aeba8 42031480        add     edx,dword ptr [rax+r8*4]"><pre><code>add     edx,dword ptr [rax+r8*4]</pre></code></td>
+<td></td><td title="00007ffc`fe3beb53 42031480        add     edx,dword ptr [rax+r8*4]"><pre><code>add     edx,dword ptr [rax+r8*4]</pre></code></td>
 </tr><tr class="">
-<td></td><td ><pre><code>            for (int i = 0; i < 16; i++)
-                                    ^^^</pre></code></td>
+<td></td><td ><pre><code>            for (int i = 0; i < x1.Length; i++)
+                                           ^^^</pre></code></td>
 </tr><tr class="">
-<td></td><td title="00007ffc`fe3aebac ffc1            inc     ecx"><pre><code>inc     ecx</pre></code></td>
+<td></td><td title="00007ffc`fe3beb57 ffc1            inc     ecx"><pre><code>inc     ecx</pre></code></td>
 </tr><tr class="">
-<td></td><td ><pre><code>            for (int i = 0; i < 16; i++)
-                            ^^^^^^</pre></code></td>
+<td></td><td title="00007ffc`fe3beb59 3b4d20          cmp     ecx,dword ptr [rbp+20h]"><pre><code>cmp     ecx,dword ptr [rbp+20h]</pre></code></td>
 </tr><tr class="">
-<td></td><td title="00007ffc`fe3aebae 83f910          cmp     ecx,10h"><pre><code>cmp     ecx,10h</pre></code></td>
-</tr><tr class="">
-<td></td><td id="1" class="reference" data-reference="M00_L01" title="00007ffc`fe3aebb1 7cf2            jl      00007ffc`fe3aeba5"><a href="#M00_L01"><pre><code>jl      M00_L01</pre></code></a></td>
+<td></td><td id="1" class="reference" data-reference="M00_L01" title="00007ffc`fe3beb5c 7cf2            jl      00007ffc`fe3beb50"><a href="#M00_L01"><pre><code>jl      M00_L01</pre></code></a></td>
 </tr><tr class="">
 <td></td><td ><pre><code>            return sum;
             ^^^^^^^^^^^</pre></code></td>
 </tr><tr class="">
-<td></td><td title="00007ffc`fe3aebb3 8bc2            mov     eax,edx"><pre><code>mov     eax,edx</pre></code></td>
+<td></td><td title="00007ffc`fe3beb5e 8bc2            mov     eax,edx"><pre><code>mov     eax,edx</pre></code></td>
 </tr><tr><td colspan="{2}">&nbsp;</td></tr>
 </tbody></table></body></html>
